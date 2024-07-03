@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class Activity 3</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+  <link rel="icon" type="image/x-icon" href="Logo_last.png">
+
+
+  <style>
+        
+
+.correct{
+    background-color: rgb(167, 225, 243);
+    border-radius: 50%;
+    width:100px;
+    height: 50px;
+   font-weight: bold;
+   
+}
+
+
+  </style>
+
+
+
+</head>
+
+
+<body>
+  <audio id="cheers" >
+    <source src="cheers.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="points" src="Points.mp3"></audio>
+  <audio id="fail" src="fail.mp3"></audio>
+  <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+    <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+    <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+</div>
+<br>
+<br>
+  <center>
+    
+  <h1 id="heading" style="font-family: Impact">Lets Revise With The Teacher</h1>
+  <div class="maindiv container" style="padding-top: 50px;">
+
+
+   <p style="font-size: 20px;">Q1.  ‘When’ can be used as a subordinating conjunction of ……………………………………
+
+    <br><br>
+
+    <label id="label1"></label> 
+       <button onclick="func1()" id="btn1" class="correct">Check</button> <br><br>
+
+     Q2.  I want to know how you made this.<br>
+     ‘How’ is a subordinating conjunction of ………………………
+     
+     <br><br>
+
+
+     <label id="label2"></label>
+    <button onclick="func2()" id="btn2" class="correct">Check</button>
+     <br> <br>
+
+     Q3.  What are the seven cases where Subordinating conjunctions are used?
+     
+     <br><br>
+
+
+     <label id="label3"></label>
+    <button onclick="func3()" id="btn3" class="correct">Check</button>
+     <br> <br>
+
+     Q4.  What is the acronym used for subordinating conjunctions?
+     
+     <br><br>
+
+
+     <label id="label4"></label>
+    <button onclick="func4()" id="btn4" class="correct">Check</button>
+     <br> <br>
+     
+     Q5.  ‘Despite’ is a subordinating conjunction for ………………..
+     
+     <br><br>
+
+
+     <label id="label5"></label>
+    <button onclick="func5()" id="btn5" class="correct">Check</button>
+     <br> <br>
+
+  </p> 
+</div>
+  <script>
+    
+           function func1(){
+            document.getElementById('label1').innerHTML="Subordinating conjunction of time<br>Subordinating Conjunctions of time help us bring about a relationship of time between two clauses.<br>Example: When you are free, please call me."
+            document.getElementById('btn1').style.display="none"
+           }
+
+           function func2(){
+            document.getElementById('label2').innerHTML="Subordinating Conjunctions of manner because it expresses the way of doing something"
+            document.getElementById('btn2').style.display="none"
+           }
+           function func3(){
+            document.getElementById('label3').innerHTML="Comparison, Condition, Concession, Reason, Manner, Time and Place"
+            document.getElementById('btn3').style.display="none"
+           }
+
+           function func4(){
+            document.getElementById('label4').innerHTML="‘ON A WHITE BUS’"
+            document.getElementById('btn4').style.display="none"
+           }
+           function func5(){
+            document.getElementById('label5').innerHTML="Subordinating conjunction for concession<br>Example: “Despite” is a subordinating conjunction for concession.<span style='color:blue'>Subordinating Conjunctions for Concession:</span> Performs the function of concession, by conceding a point between an independent clause and a subordinate clause. They introduce a clause that presents a fact or idea which contradicts the main clause. <br>Example: Despite being late, he was allowed entry to the class."
+            document.getElementById('btn5').style.display="none"
+           }
+
+
+
+  </script>
+</center>
+</body>
+</html>

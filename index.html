@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class Activity 3</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="wts.css">
+  <link rel="icon" type="image/x-icon" href="Logo_last.png">
+</head>
+<body>
+  <audio id="cheers" >
+    <source src="cheers.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="points" src="Points.mp3"></audio>
+  <audio id="fail" src="fail.mp3"></audio>
+  <div class="header" style="width:100%; box-shadow:5px 5px 10px rgb(0, 0, 0); padding-bottom:10px;">
+    <img src="Logo.png" width="5%" style="float:left; margin-top:25px;" class="img-responsive">
+    <span> <img src="header.png" width="30%" height="100px" class="img-responsive"></span>
+</div>
+<br>
+<br>
+  <center>
+  <h1 id="heading">The Mice</h1>
+  
+  <div class="container">
+
+    <button onclick="abc(1)" class="smallbtn">Q1</button>
+    <button onclick="abc(2)" class="smallbtn">Q2</button>
+    <button onclick="abc(3)" class="smallbtn">Q3</button>
+    <button onclick="abc(4)" class="smallbtn">Q4</button>
+    <button onclick="abc(5)" class="smallbtn">Q5</button>
+    <button onclick="abc(6)" class="smallbtn">Q6</button>
+    <button onclick="abc(7)" class="smallbtn">Q7</button>
+    <button onclick="abc(8)" class="smallbtn">Q8</button>
+    <button onclick="abc(9)" class="smallbtn">Q9</button> 
+    <button onclick="abc(10)" class="smallbtn">Q10</button>
+    <button onclick="abc(11)" class="smallbtn">Q11</button>
+    <button onclick="abc(12)" class="smallbtn">Q12</button>
+    <button onclick="abc(13)" class="smallbtn">Q13</button>
+    <button onclick="abc(14)" class="smallbtn">Q14</button>
+    <button onclick="abc(15)" class="smallbtn">Q15</button>
+    <button onclick="abc(16)" class="smallbtn">Q16</button>
+    <button onclick="abc(17)" class="smallbtn">Q17</button>
+    <button onclick="abc(18)" class="smallbtn">Q18</button>
+    <button onclick="abc(19)" class="smallbtn">Q19</button> 
+    <button onclick="abc(20)" class="smallbtn">Q20</button>
+  </div>
+  
+  <div class="maindiv container">
+    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="font-size:25px; color:black; font-family:Georgia;">
+      <p id="numdiv"></p>
+      </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 imgdiv">
+      <img id ="math_ques" src="MAth Question.jpg" width="100%">
+    </div>
+  <div id="questiondiv" class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+    <div id="question"></div>
+    <br>
+  <div class="menu"><br><ul id="options"></ul></div>
+  <button id="subbtn" class="btn btn-success" onclick="checkAnswer()">Submit Answer</button>
+  <button id="nextbtn" class="btn btn-primary" onclick="newques()" style="display:none">Next</button>
+  <p id="result"></p>
+  </div>
+</div>
+  <script>
+    // Define an array of questions and their options
+    var questions = [
+    
+    {
+      questionNo: "Q1.",
+      question: "A) “If” is a coordinating conjunction.<br>B)Subordinating conjunctions can show relationships of time and space between two clauses.",
+      options: ["a) Both A and B are True", "b) Both A and B are False","c) A is true and B is false","d) A is false and B is true"],
+      answer: "d) A is false and B is true"
+    },
+
+    {
+      questionNo: "Q2.",
+      question: "I came because I needed the medicine on time.<br>‘Because  ’ is a subordinating conjunction of reason",
+      options: ["True", "False"],
+      answer: "True"
+    },
+
+    {
+      questionNo: "Q3.",
+      question: "‘Otherwise’ is used for which case?",
+      options: ["a) Expression",
+                "b) Correlation",
+                "c) Reason",
+                "d) Condition"],
+      answer: "d) Condition"
+    },
+
+    
+    { 
+      questionNo: "Q4.",
+      question: "‘While’ is used as a:",
+      options: ["a) Subordinating conjunction of time", "b) Subordinating conjunction of contrast or comparison","c) Both A and B","d) None of the above"],
+      answer: "c) Both A and B"
+    },
+
+    {
+      questionNo: "Q5.",
+      question: "He behaved as if he were king.<br>‘As if’ is:",
+      options: ["a) A subordinating Conjunction of time",
+                "b) A subordinating Conjunction of moment","c) A subordinating conjunction of comparison","d) A subordinating conjunction of manner"],
+      answer: "d) A subordinating conjunction of manner"
+    },
+
+
+
+    {
+      questionNo: "Q6.",
+      question: " Unless living on the outskirts, my classmates live in the centre.<br>Does the above sentence show correct use of the subordinating conjunction ‘unless’ ?",
+      options: ["Yes",
+                "No"],
+      answer: "No"
+    },
+
+   
+
+      {
+        questionNo: "Q7.",
+        question: "True and False<br>“After” and “Before” are two of the most frequently used subordinating conjunctions of time ",
+        options: ["True","False"],
+        answer: "True"
+      },
+
+      {
+        questionNo: "Q8.",
+        question: "He wants to be a social worker so that he can help people.<br>In the above sentence one can find a:",
+        options: ["a) Contrast clause starting with ‘so that ’", 
+                  "b) Connection clause starting with ‘so that ’",
+                  "c) Since clause starting with ‘so that’",
+                  "d) Purpose clause starting with ‘so that’"],
+        answer: "d) Purpose clause starting with ‘so that’"
+      },
+
+      {
+        questionNo: "Q9.",
+        question: "“As soon as” is which kind of conjunction?",
+        options: ["a) cumulative subordinating conjunction",
+                  "b) subordinating conjunction for time",
+                  "c) correlative conjunction",
+                  "d) Both A and B"],
+        answer: "b) subordinating conjunction for time"    
+      },
+
+      {
+        questionNo: "Q10.",
+        question: "Although he’s quite aged, he walks really fast.<br>Does the above sentence show correct usage of the subordinating conjunction “although”?",
+        options: ["Yes", 
+                  "No"],
+        answer: "Yes"
+      },
+
+      
+      {
+        questionNo: "Q11.",
+        question: "True or False<br>Subordinating conjunctions begin a subordinate clause and connect it to an independent clause in a sentence.",
+        options: ["True",
+                  "False"],
+        answer: "True"
+      },
+
+      {
+        questionNo: "Q12.",
+        question: "This is a minor nevertheless a crucial change.<br>In the above statement, ‘nevertheless’ is:",
+        options: ["a) A subordinate conjunction for reason",
+                  "b) An adverb",
+                  "c) A subordinating conjunction for condition",
+                  "d) A preposition"],
+        answer: "b) An adverb"
+      },
+
+      {
+        questionNo: "Q13.",
+        question: "Subordinating conjunctions do not work in pairs.<br>The above sentence is: ",
+        options: ["Not True","True"],
+        answer: "True"
+      },
+
+      {
+        questionNo: "Q14.",
+        question: "They can leave whenever they feel like.<br>‘Whenever’ in the above statement is a:",
+        options: ["a) Coordinating conjunction of time",
+                  "b) Subordinating Conjunction of time","c) Correlative Conjunction of time","d) None of the above"
+                ],
+        answer: "b) Subordinating Conjunction of time"
+      },
+
+      {
+        questionNo: "Q15.",
+        question: "The session did not end until they were tired of debating.<br>In the sentence above  “Until” is a:",
+        options: ["a) Preposition",
+                  "b) A subordinating conjunction of time",
+                  "c) A correlative conjunction",
+                  "d) Both A and B"],
+        answer: "d) Both A and B"
+      },
+
+      {
+        questionNo: "Q16.",
+        question: " When a dependent clause comes after an independent clause a comma is not needed.",
+        options: ["True", "False"],
+        answer: "True"
+      },
+
+      {
+        questionNo: "Q17.",
+        question: " ‘Concession’ is one of the functions of subordinating conjunctions.",
+        options: ["True",
+                  "False"],
+        answer: "True"
+      },
+
+      {
+        questionNo: "Q18.",
+        question: "I do not like labradors whereas my twin sister longs for them.<br>‘Whereas’ is a:",
+        options: ["a) Subordinating conjunction for comparison", "b) Subordinating conjunction for condition", "c) Neither A nor B", "d) Subordinating conjunction for reason"],
+        answer: "a) Subordinating conjunction for comparison"
+      },
+
+      {
+        questionNo: "Q19.",
+        question: "<u>Once</u> can function as an  adverb of frequency.",
+        options: ["a) The sentence is conceptually wrong", "b) Once is an adverb of Frequency","c) Once is a subordinate conjunction of time","d) Both B and C"],
+        answer: "d) Both B and C"
+      },
+
+      {
+        questionNo: "Q20.",
+        question: " When an independent clause comes after a dependent clause a comma is needed. It is shown in the above example.",
+        options: ["True", "False"],
+        answer: "True"
+      },
+      // Add more questions here
+    ];
+
+    //define the array of images
+
+    var img= ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg", "16.jpg", "17.jpg", "18.jpg", "19.gif", "20.jpg"]
+    
+    // Get a random question from the array
+
+    var randomQuestion = questions[0];
+    var updatedimage = img[0]
+    document.getElementById("math_ques").src = updatedimage
+    document.getElementById("numdiv").innerHTML = randomQuestion.questionNo;
+    document.getElementById("question").innerHTML = randomQuestion.question;
+    
+    randomQuestion.options.forEach(function(option) {
+      var li = document.createElement("li");
+      li.innerHTML = '<input type="radio" name="answer" value="' + option + '"> ' + option;
+      document.getElementById("options").appendChild(li);
+    });
+
+// Create a function here like family array project of Byjus to display next question \
+    // from array everytime instead of random question
+    var i=1;
+    var count=questions.length
+    function newques(){
+      if(i==count){
+        document.getElementById("heading").innerHTML = "Thank You...."
+        document.getElementById("math_ques").src = "last.jpg"
+        document.getElementById("question").innerHTML=""
+        document.getElementById("options").innerHTML="Well Done"
+        document.getElementById("cheers").play()
+        document.getElementById("numdiv").style.display='none'
+        document.getElementById("result").innerHTML ="You Have Completed the Chapter of <b>Subordinating Conjunctions</b><br><a href='subjective.html'>Click to Practice More</a>"
+      document.getElementById("nextbtn").style.display="none"
+      }
+      else{
+
+      document.getElementById("options").innerHTML=""
+      document.getElementById("result").innerHTML =""
+      
+  
+      updatedimage= img[i]
+      document.getElementById("math_ques").src = updatedimage
+
+// Display the question and options on the page
+      randomQuestion = questions[i];    
+      document.getElementById("numdiv").innerHTML = randomQuestion.questionNo;
+    document.getElementById("question").innerHTML = randomQuestion.question;
+    
+    
+    randomQuestion.options.forEach(function(option) {
+      var li = document.createElement("li");
+      li.innerHTML = '<input type="radio" name="answer" value="' + option + '"> ' + option;
+      document.getElementById("options").appendChild(li);
+    });
+    document.getElementById("subbtn").style.display="inline-block"
+        document.getElementById("nextbtn").style.display="none"
+
+    i++;
+    }
+  }
+    
+    
+    // Check the selected answer against the correct answer
+    function checkAnswer() {
+      var selectedAnswer = document.querySelector('input[name="answer"]:checked').value;
+      if (selectedAnswer === randomQuestion.answer) {
+        document.getElementById("result").innerHTML = "Good job! &#128512" ;
+        document.getElementById("points").play();
+        document.getElementById("subbtn").style.display="none"
+        document.getElementById("nextbtn").style.display="inline-block"
+      } else {
+        document.getElementById("result").innerHTML = "Try Again😎! ";
+        document.getElementById("fail").play();
+      }
+    }
+
+    
+    function abc(x){
+      i=x-1
+      document.getElementById("options").innerHTML=""
+      document.getElementById("result").innerHTML =""
+      
+  
+      updatedimage= img[i]
+      document.getElementById("math_ques").src = updatedimage
+
+// Display the question and options on the page
+      randomQuestion = questions[i];    
+      document.getElementById("numdiv").innerHTML = randomQuestion.questionNo;
+    document.getElementById("question").innerHTML = randomQuestion.question;
+    
+    
+    randomQuestion.options.forEach(function(option) {
+      var li = document.createElement("li");
+      li.innerHTML = '<input type="radio" name="answer" value="' + option + '"> ' + option;
+      document.getElementById("options").appendChild(li);
+    });
+    document.getElementById("subbtn").style.display="inline-block"
+        document.getElementById("nextbtn").style.display="none"
+
+    i++;
+    }
+    
+  </script>
+</center>
+</body>
+</html>
